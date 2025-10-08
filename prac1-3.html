@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>REST API Client</title>
+</head>
+<body>
+    <h2>Consume REST API</h2>
+    <button onclick="getMessage()">Get Message</button>
+
+    <script>
+        function getMessage() {
+            fetch('http://127.0.0.1:5000/hello')
+                .then(response => response.json())
+                .then(data => alert(data.message))
+                .catch(error => console.error('Error:', error));
+        }
+    </script>
+</body>
+</html>
